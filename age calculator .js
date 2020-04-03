@@ -10,32 +10,32 @@ function ageindays() {
 
     var days=day();
     function day() {
-        if (bday<eday) {
-            bday=bday+10;
-            bmonth=(bmonth+12)-1;
-            byear=byear-1;
-            return (bday-eday);
+        if (eday<bday) {
+            eday=eday+10;
+            emonth=(emonth+12)-1;
+            eyear=eyear-1;
+            return (eday-bday);
         } else {
-            return (bday-eday);
+            return (eday-bday);
         }
     }
     var months=month();
     function month() {
-        if (bmonth<emonth) {
-            bmonth=(bmonth+12);
-            byear=byear-1;
-            return (bmonth-emonth);
+        if (emonth<bmonth) {
+            emonth=(emonth+12);
+            eyear=eyear-1;
+            return (emonth-bmonth);
         } else {
-            return (bmonth-emonth);
+            return (emonth-bmonth);
         }
     }
     var years=year();
     function year() {
-        if (bmonth<emonth) {
-            byear=byear-1;
-            return (byear-eyear);
+        if (emonth<bmonth) {
+            eyear=eyear-1;
+            return (eyear-byear);
         } else{
-            return (byear-eyear);
+            return (eyear-byear);
         }
     }
 
