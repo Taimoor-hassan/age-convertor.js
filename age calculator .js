@@ -4,6 +4,10 @@ function ageindays() {
     var eday=dt.getDate();
     var emonth=dt.getMonth()+1;
     var eyear=dt.getUTCFullYear();
+    var lastday = function(y,m){
+        return  new Date(y, m , 0).getDate();
+        }
+    var elast=lastday(eyear,emonth-1)
 
     var bday=prompt('Enter your birth day');
     var bmonth=prompt('Enter your birth month');
@@ -12,7 +16,7 @@ function ageindays() {
     var days=day();
     function day() {
         if (eday<bday) {
-            eday=eday+10;
+            eday=(eday+elast);
             emonth=(emonth+12)-1;
             eyear=eyear-1;
             return (eday-bday);
