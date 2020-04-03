@@ -1,8 +1,9 @@
 
 function ageindays() {
-    var eday=3;
-    var emonth=4;
-    var eyear=2020;
+    var dt= new Date();
+    var eday=dt.getDate();
+    var emonth=dt.getMonth()+1;
+    var eyear=dt.getUTCFullYear();
 
     var bday=prompt('Enter your birth day');
     var bmonth=prompt('Enter your birth month');
